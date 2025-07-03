@@ -32,7 +32,10 @@ jobs:
           # 'latest' will use the newest version available on the action
           release: latest 
 
-      # 3. Runs the MATLAB test script
+      # 3. Runs the MATLAB tests using the dedicated action for testing
       - name: Run MATLAB tests
-        run: matlab -batch "runtests('testSolveQuadratic.m')"
+        uses: matlab-actions/run-tests@v2
+        with:
+          # This will automatically find and run tests like 'testSolveQuadratic.m'
+          source-folder: ${{ github.workspace }}
 
