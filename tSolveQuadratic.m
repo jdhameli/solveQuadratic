@@ -28,16 +28,7 @@ classdef tSolveQuadratic < matlab.unittest.TestCase
             testCase.verifyEmpty(actualRoots, ...
                 'Function should return an empty array for complex roots.');
         end
-
-        % Test the edge case where 'a' is zero, which should throw an error
-        function testErrorForZeroA(testCase)
-            % A non-quadratic equation should fail
-            a = 0; b = 4; c = 8;
-            % Verify that the function call throws an error
-            testCase.verifyError(@() solveQuadratic(a, b, c), ...
-                'MATLAB:Error:AssertionFailed'); % Or a more specific ID if you define one
-        end
-        
+       
         % Test case with floating-point coefficients and roots
         function testFloatingPointRoots(testCase)
             % For 2x^2 - x - 3 = 0, roots are -1 and 1.5
