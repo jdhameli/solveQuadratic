@@ -1,6 +1,6 @@
 # .github/workflows/matlab.yml
 
-name: Run MATLAB Tests
+name: Run MATLAB Tests1
 
 # Controls when the workflow will run
 on:
