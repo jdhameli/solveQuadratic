@@ -10,6 +10,8 @@ on:
   # Triggers the workflow on pull request events for the main branch
   pull_request:
     branches: [ main ]
+  
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -39,7 +41,7 @@ jobs:
           test-results-junit: test-results/results.xml
           # This will automatically find and run tests like 'testSolveQuadratic.m'
           source-folder: ${{ github.workspace }}
-      - name: Archive test results
+      - name: Archive test result
         uses: actions/upload-artifact@v4
         with:
           name: test-results-report
