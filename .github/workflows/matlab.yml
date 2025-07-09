@@ -39,7 +39,7 @@ jobs:
           test-results-junit: test-results/results.xml
           # This will automatically find and run tests like 'testSolveQuadratic.m'
           source-folder: ${{ github.workspace }}
-      - name: Archive test results
+      - name: Archive test result
         uses: actions/upload-artifact@v4
         with:
           name: test-results-report
